@@ -1,15 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapperDiv">
+    <div class="block">
+      <ControlCenter></ControlCenter>
+    </div>
+    <div class="block">
+      <Dashboard></Dashboard>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Dashboard from "@/components/DashboardView.vue";
+import ControlCenter from "@/components/ControlCenter.vue";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ControlCenter,
+    Dashboard,
   }
 }
 </script>
@@ -21,6 +28,26 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+.wrapperDiv {
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 4%;
+}
+
+.block {
+  width: 45%;
+  height: 500px;
+
+  border: solid #42b983;
+  border-width: thick;
+  border-radius: 8%;
+
+}
+
 </style>
